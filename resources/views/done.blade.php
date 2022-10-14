@@ -29,7 +29,7 @@
             {{ __('LOGOUT') }}
           </a>
         </form>
-        <div class="menu__item"><a href="./login" class="nav-menu">MY PAGE</a></div>
+        <div class="menu__item"><a href="/mypage" class="nav-menu">MY PAGE</a></div>
         @endauth
         @guest
         <div class="menu__item"><a href="./" class="nav-menu">HOME</a></div>
@@ -38,62 +38,19 @@
         @endguest
       </div>
     </div>
-    @auth
-    <p class="username">{{ Auth::user()->name }}でログイン中</p>
-    @endauth
-
-    <form action="/search" method="get" class="w-full max-w-3xl">
-      @csrf
-      <div class="flex -mx-4 form-flex">
-        <div class="w-full md:w-1/5 px-1 mb-6 md:mb-0">
-          <div class="relative">
-            <select name="area_id" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-              <option value="" selected>All area</option>
-              @foreach($areas as $area)
-              <option value="{{ $area->id }}">{{ $area->name }}</option>
-              @endforeach
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/5 px-1 mb-6 md:mb-0">
-          <div class="relative">
-            <select name="genre_id" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-              <option value="" selected>All genre</option>
-              @foreach($genres as $genre)
-              <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-              @endforeach
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/3 px-1 mb-6 md:mb-0">
-          <input name="name" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="">
-        </div>
-        <button class="shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-5 rounded" type="submit">
-          検索
-        </button>
-      </div>
-    </form>
   </header>
 
-
-
-
-
-  <!-- カード -->
-
-  <div class="grid grid-cols-4 gap-5 p-10">
-   <div>ご予約が完了しました</div>
+  <div class="h-screen w-screen flex justify-center items-center">
+    <div class="p-8 max-w-xl w-96 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <h5 class="pb-2 flex justify-center mb-2 text-xl tracking-tight text-gray-900 dark:text-white">ご予約が完了しました</h5>
+      <div class="flex justify-center">
+        <a href="/" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          戻る
+        </a>
+      </div>
+    </div>
   </div>
+
 
 
   <script src="https://cdn.tailwindcss.com"></script>

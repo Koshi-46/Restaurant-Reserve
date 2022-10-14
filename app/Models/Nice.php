@@ -9,6 +9,8 @@ class Nice extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['shop_id', 'user_id'];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');
@@ -18,4 +20,5 @@ class Nice extends Model
     {
         return $this->belongsTo('App\Models\Shop');
     }
+
 }

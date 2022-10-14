@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 
 class Shop extends Model
 {
@@ -44,5 +46,21 @@ class Shop extends Model
         // $query->where('user_id', '=', $user_id);
         $results = $query->get();
         return $results;
+    }
+
+    public function is_liked_by_auth_user()
+    {
+        $id = Auth::id();
+
+        $nices = array();
+        foreach ($this->nices as $nice) {
+            array_push($nices, $nice->user_id);
+        }
+
+        if (in_array($id, $nices)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -29,7 +29,7 @@
             {{ __('LOGOUT') }}
           </a>
         </form>
-        <div class="menu__item"><a href="./login" class="nav-menu">MY PAGE</a></div>
+        <div class="menu__item"><a href="mypage" class="nav-menu">MY PAGE</a></div>
         @endauth
         @guest
         <div class="menu__item"><a href="./" class="nav-menu">HOME</a></div>
@@ -94,9 +94,6 @@
         </div>
         
         <div class="flex items-center justify-between">
-          <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-            予約する
-          </button> -->
           <input class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="追加" />
         </div>
       </form>

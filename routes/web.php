@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\NiceController;
 
 
 /*
@@ -24,10 +25,18 @@ Route::get('/', 'App\Http\Controllers\ShopController@index')->name('shop.index')
 Route::get('/search', 'App\Http\Controllers\ShopController@search')->name('shop.search');
 Route::post('/detail', 'App\Http\Controllers\ShopController@detail')->name('shop.detail');
 Route::post('/store', 'App\Http\Controllers\ReserveController@store')->name('reserve.store');
+Route::get('/mypage', 'App\Http\Controllers\ReserveController@index')->name('reserve.index');
+Route::post('/change', 'App\Http\Controllers\ReserveController@detail')->name('reserve.change');
+Route::post('/update', 'App\Http\Controllers\ReserveController@update')->name('reserve.update');
+Route::post('/delete', 'App\Http\Controllers\ReserveController@delete')->name('reserve.delete');
+Route::get('/nice', 'App\Http\Controllers\NiceController@index')->name('nice.index');
 
 
-// Route::post('/nice', 'App\Http\Controllers\NiceController@store')->name('shop.store');
-// Route::post('/delete', 'App\Http\Controllers\NiceController@destroy')->name('shop.destroy');
+
+
+Route::post('/like','App\Http\Controllers\NiceController@like')->name('shop.like');
+Route::post('/unlike','App\Http\Controllers\NiceController@unlike')->name('shop.unlike');
+
 
 
 

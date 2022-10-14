@@ -29,7 +29,7 @@
             {{ __('LOGOUT') }}
           </a>
         </form>
-        <div class="menu__item"><a href="./login" class="nav-menu">MY PAGE</a></div>
+        <div class="menu__item"><a href="mypage" class="nav-menu">MY PAGE</a></div>
         @endauth
         @guest
         <div class="menu__item"><a href="./" class="nav-menu">HOME</a></div>
@@ -93,6 +93,7 @@
   <!-- カード -->
 
   <div class="grid grid-cols-4 gap-5 p-10">
+
     @foreach($shops as $shop)
     <div class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-100">
       <img class="w-full" src="{{ $shop->url }}">
@@ -103,12 +104,30 @@
         <span class="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-2">#{{ $shop->area->name }}</span>
         <span class="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2 mb-2">#{{ $shop->genre->name }}</span>
       </div>
-      <form action="{{ route('shop.detail', ['id' => $shop->id]) }}" method="post">
-        @csrf
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-normal hover:text-white py-2 px-4 mb-6 mt-3 ml-6 text-sm border border-blue-500 hover:border-transparent rounded">
-          詳しく見る
-        </button>
-      </form>
+      <div class="flex justify-between items-center">
+        <form action="{{ route('shop.detail', ['id' => $shop->id]) }}" method="post">
+          @csrf
+          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-normal hover:text-white py-2 px-4 mb-6 mt-3 ml-6 text-sm border border-blue-500 hover:border-transparent rounded">
+            詳しく見る
+          </button>
+        </form>
+        @auth
+        @if(!$shop->is_liked_by_auth_user())
+        <form action="{{ route('shop.like') }}" method="post">
+          @csrf
+          <input type="hidden" name="id" value="{{ $shop->id }}">
+          <button class="like pr-3"><img class="like_img" src="/img/heart_1.png" alt=""></button>
+        </form>
+        @else
+        <form action="{{ route('shop.unlike') }}" method="post">
+          @csrf
+          <input type="hidden" name="id" value="{{ $shop->id }}">
+          <button class="unlike pr-3"><img class="unlike_img" src="/img/heart_2.png" alt=""></button>
+        </form>
+        @endif
+        @endauth
+      </div>
+
     </div>
     @endforeach
   </div>

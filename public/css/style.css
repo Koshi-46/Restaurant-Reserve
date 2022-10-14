@@ -135,3 +135,13 @@ header {
   transform: translateX(0);
 }
 
+
+.like,
+.unlike {
+  border: none;
+}
+
+.like_img,
+.unlike_img {
+  width: 40px;
+}

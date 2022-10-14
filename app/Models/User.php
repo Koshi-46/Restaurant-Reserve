@@ -23,42 +23,25 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function nices()
-    {
-        return $this->hasMany('App\Models\Nice');
-    }
+    // public function nices()
+    // {
+    //     return $this->hasMany('App\Models\Nice');
+    // }
 
 
     public function reserves()
     {
         return $this->hasMany('App\Models\Reserve');
     }
+
+    public function nices()
+    {
+        return $this->hasMany(Nice::class)
+        ->withTimestamps();
+    }
     
 
-    public function isLike($postId)
-    {
-      return $this->likes()->where('shop_id',$postId)->exists();
-    }
-
-    //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
-    public function like($postId)
-    {
-      if($this->isLike($postId)){
-        //もし既に「いいね」していたら何もしない
-      } else {
-        $this->likes()->attach($postId);
-      }
-    }
-
-    //isLikeを使って、既にlikeしたか確認して、もししていたら解除する
-    public function unlike($postId)
-    {
-      if($this->isLike($postId)){
-        //もし既に「いいね」していたら消す
-        $this->likes()->detach($postId);
-      } else {
-      }
-    }
+    
 
     /**
      * The attributes that should be hidden for serialization.
