@@ -29,7 +29,7 @@
             {{ __('LOGOUT') }}
           </a>
         </form>
-        <div class="menu__item"><a href="/mypage" class="nav-menu">MY PAGE</a></div>
+        <div class="menu__item"><a href="mypage" class="nav-menu">MY PAGE</a></div>
         @endauth
         @guest
         <div class="menu__item"><a href="./" class="nav-menu">HOME</a></div>

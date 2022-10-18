@@ -48,7 +48,7 @@
       <div class="flex -mx-4 form-flex">
         <div class="w-full md:w-1/5 px-1 mb-6 md:mb-0">
           <div class="relative">
-            <select name="area_id" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <select name="area_id" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded" id="grid-state">
               <option value="" selected>All area</option>
               @foreach($areas as $area)
               <option value="{{ $area->id }}">{{ $area->name }}</option>

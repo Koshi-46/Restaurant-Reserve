@@ -29,13 +29,6 @@
             <a href="/">戻る</a>
         </x-button>
     </x-auth-card>
-    <!-- <x-app-layout>
-   
-
-       
-
-       
-    </x-app-layout> -->
 </body>
 
 </html>

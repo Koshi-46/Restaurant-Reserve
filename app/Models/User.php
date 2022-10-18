@@ -23,12 +23,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    // public function nices()
-    // {
-    //     return $this->hasMany('App\Models\Nice');
-    // }
-
-
     public function reserves()
     {
         return $this->hasMany('App\Models\Reserve');

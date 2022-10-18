@@ -28,14 +28,6 @@ class NiceController extends Controller
         return redirect()->back();
     }
 
-    public function index()
-    {
-     
-        $shop = Shop::all();
-        $nices = Nice::where('shop_id', $shop->id)->get();
-
-
-        return view('mypage', compact('nices'));
-    }
+    
 
 }

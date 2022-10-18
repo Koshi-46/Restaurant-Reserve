@@ -32,7 +32,6 @@ class Shop extends Model
 
     public static function doSearch($keyword, $area_id, $genre_id)
     {
-        // $user_id = Auth::id();
         $query = self::query();
         if (!empty($keyword)) {
             $query->where('name', 'like binary', "%{$keyword}%");
@@ -43,7 +42,6 @@ class Shop extends Model
         if (!empty($genre_id)) {
             $query->where('genre_id', 'like binary', "%{$genre_id}%");
         }
-        // $query->where('user_id', '=', $user_id);
         $results = $query->get();
         return $results;
     }
