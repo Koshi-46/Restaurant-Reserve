@@ -35,7 +35,6 @@
         <div class="menu__item"><a href="./" class="nav-menu">HOME</a></div>
         <div class="menu__item"><a href="./register" class="nav-menu">REGISTRATION</a></div>
         <div class="menu__item"><a href="./login" class="nav-menu">LOGIN</a></div>
-        <div class="menu__item"><a href="/done" class="nav-menu">DONE</a></div>
         @endguest
       </div>
     </div>

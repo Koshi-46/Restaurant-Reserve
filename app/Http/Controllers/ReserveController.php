@@ -20,7 +20,6 @@ class ReserveController extends Controller
     {
         //
         $user = Auth::user();
-        // $shop = Shop::with('shop')->where('id', '=', '$request->id')->first();
         Reserve::create([
             'date' => $request['date'],
             'time' => $request['time'],
@@ -41,20 +40,19 @@ class ReserveController extends Controller
 
         return view('mypage', compact('user', 'reserves', 'nices'));
     }
-    
+
     public function detail(Request $request)
     {
 
         $reserves = Reserve::find($request->id);
         return view('change', compact('reserves'));
-
     }
 
     public function update(Request $request)
     {
         $reserve = $request->all();
         unset($reserve['_token']);
-        Reserve::where('id',$request->id)->update($reserve);
+        Reserve::where('id', $request->id)->update($reserve);
         return redirect('mypage');
     }
 
@@ -66,5 +64,4 @@ class ReserveController extends Controller
         $reserve->delete();
         return redirect('mypage');
     }
-
 }

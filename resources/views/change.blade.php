@@ -60,7 +60,7 @@
           <label class="block text-gray-700 text-sm font-bold mb-2" for="time">
             時間
           </label>
-          <input name="time" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required value="{{$reserves->time}}"/>
+          <input name="time" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required value="{{$reserves->time}}" />
         </div>
 
         <div class="mb-6 relative">
@@ -69,7 +69,7 @@
           </label>
           <input name="member" class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required type="number" value="{{$reserves->member}}" />
         </div>
-        
+
         <div class="flex items-center justify-between">
           <input class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="変更する" />
         </div>

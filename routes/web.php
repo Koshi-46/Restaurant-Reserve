@@ -33,8 +33,8 @@ Route::post('/delete', 'App\Http\Controllers\ReserveController@delete')->name('r
 
 
 
-Route::post('/like','App\Http\Controllers\NiceController@like')->name('shop.like');
-Route::post('/unlike','App\Http\Controllers\NiceController@unlike')->name('shop.unlike');
+Route::post('/like', 'App\Http\Controllers\NiceController@like')->name('shop.like');
+Route::post('/unlike', 'App\Http\Controllers\NiceController@unlike')->name('shop.unlike');
 
 
 
@@ -44,7 +44,4 @@ Route::get('/thanks', function () {
     return view('thanks');
 })->middleware(['auth'])->name('thanks');
 
-require __DIR__.'/auth.php';
-
-// ログインしている人だけ見れる
-// Route::get('/home', [AuthorController::class, 'index'])->middleware('auth');
+require __DIR__ . '/auth.php';
