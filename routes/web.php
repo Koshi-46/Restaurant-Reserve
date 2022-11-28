@@ -17,9 +17,6 @@ use App\Http\Controllers\NiceController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
 
 Route::get('/', 'App\Http\Controllers\ShopController@index')->name('shop.index');
 Route::get('/search', 'App\Http\Controllers\ShopController@search')->name('shop.search');
@@ -29,15 +26,8 @@ Route::get('/mypage', 'App\Http\Controllers\ReserveController@index')->name('res
 Route::post('/change', 'App\Http\Controllers\ReserveController@detail')->name('reserve.change');
 Route::post('/update', 'App\Http\Controllers\ReserveController@update')->name('reserve.update');
 Route::post('/delete', 'App\Http\Controllers\ReserveController@delete')->name('reserve.delete');
-
-
-
-
 Route::post('/like', 'App\Http\Controllers\NiceController@like')->name('shop.like');
 Route::post('/unlike', 'App\Http\Controllers\NiceController@unlike')->name('shop.unlike');
-
-
-
 
 
 Route::get('/thanks', function () {
