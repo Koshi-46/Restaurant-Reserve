@@ -1,6 +1,8 @@
 # アプリケーション名
 飲食店予約アプリ「Rese」
 
+<img width="1440" alt="RestaurantImage" src="https://user-images.githubusercontent.com/55370161/204184459-6b094347-59a1-4b91-bc43-319b93786b29.png">
+
 ## 説明
 飲食店の予約ができるアプリ  
 ユーザーは飲食店の一覧や詳細を見ることができ、会員登録すればお気に入り登録や店舗予約を行うことができる。
