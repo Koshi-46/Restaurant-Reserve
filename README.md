@@ -32,6 +32,6 @@
 - Tailwind CSS  
 ### バックエンド
 - PHP 8.1.9  
-- Laravel　8.83.25  
+- Laravel 10.30.1
 - mysql 8.0.30  
 - composer  
