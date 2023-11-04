@@ -8,13 +8,14 @@
 ユーザーは飲食店の一覧や詳細を見ることができ、会員登録すればお気に入り登録や店舗予約を行うことができる。
 
 ## 環境構築方法
-1. 「git clone」などを用いてご自身の環境にコピー  
-2. composer update
-3. .envをご自身の環境に編集  
-4. php artisan key:generate  
-5. php artisan migrate:fresh  
-6. php artisan db:seed  
-7. php artisan serve  
+1. Laravelが使用できる環境構築
+2. 「git clone」などを用いてご自身の環境にコピー
+3. composer update
+4. .envをご自身の環境に編集
+5. php artisan key:generate
+6. php artisan migrate:fresh
+7. php artisan db:seed
+8. php artisan serve
 
 ## 利用方法
 トップページにアクセスすると飲食店の一覧が表示されますので、エリアやジャンルなどで絞り込み検索をおこない行きたいお店を見つけます。  
